@@ -5,12 +5,14 @@
   "main": "handler.js",
   "scripts": {
     "tm": "sls offline start",
-    "test": "jest handler.test.ts"
+    "test": "jest handler.test.ts",
+    "integration-test": "jest handler.integration.test.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mongoose": "^7.3.1",
     "serverless-offline": "^8.8.1"
   },
   "devDependencies": {

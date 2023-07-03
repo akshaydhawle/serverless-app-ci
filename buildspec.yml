@@ -8,15 +8,30 @@ phases:
     commands:
       - npm install -g serverless
       - npm install
+      - sudo yum update -y
+      - sudo yum install -y docker
+      - sudo systemctl start docker
+      - sudo systemctl enable docker
 
   build:
     commands:
       - echo "Running database migrations..."
       - echo "Running tests..."
       - npm run test
+      - echo "Pulling mongodb image..."
+      - docker pull mongo
+      - echo "running mongodb image..."
+      - docker run -d --name mongodb-test -p 27017:27017 mongo
+      - echo "running Integration tests..."
+      - npm run integration-test
+      - echo "stopping mongodb containers..."
+      - docker stop mongodb-test
+      - docker rm mongodb-test
       - echo "Packaging and deploying the serverless application..."
       - serverless deploy --stage $ENVIRONMENT
 
 cache:
   paths:
     - node_modules
+
+    
