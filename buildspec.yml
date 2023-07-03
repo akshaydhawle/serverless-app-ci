@@ -8,10 +8,10 @@ phases:
     commands:
       - npm install -g serverless
       - npm install
-      - sudo yum update -y
-      - sudo yum install -y docker
-      - sudo systemctl start docker
-      - sudo systemctl enable docker
+      - apk update 
+      - apk add docker
+      - systemctl start docker
+      - systemctl enable docker
 
   build:
     commands:
