@@ -8,8 +8,8 @@ phases:
     commands:
       - npm install -g serverless
       - npm install
-      - apk update 
-      - apk add docker
+      - yum update -y
+      - yum install -y docker
       - systemctl start docker
       - systemctl enable docker
 
