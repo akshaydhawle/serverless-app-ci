@@ -33,7 +33,7 @@ module.exports.hello = async (event) => {
             body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit",
           },
         ],
-        message: "v3 posts fetched successfully",
+        message: "v4 posts fetched successfully",
       },
       null,
       2
