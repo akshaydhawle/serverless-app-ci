@@ -6,12 +6,12 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
+      - sudo apt update
+      - sudo apt install -y docker.io
+      - sudo systemctl start docker
+      - sudo systemctl enable docker
       - npm install -g serverless
       - npm install
-      - yum update -y
-      - yum install -y docker
-      - systemctl start docker
-      - systemctl enable docker
 
   build:
     commands:
