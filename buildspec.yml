@@ -8,18 +8,14 @@ phases:
     commands:
       - npm install -g serverless
       - npm install
+
   build:
     commands:
       - echo "Running database migrations..."
-  test:
-    commands:
       - echo "Running tests..."
       - npm run test
-  post_build:
-    commands:
       - echo "Packaging and deploying the serverless application..."
-      - serverless package
-      - serverless deploy --stage $ENVIRONMENT      
+      - serverless deploy --stage $ENVIRONMENT
 
 cache:
   paths:
